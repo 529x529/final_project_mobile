@@ -14,17 +14,17 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
 
-//    @Test
-//    @Tag("android")
-//    void successfulSearchTest() {
-//        step("Ввод поискового запроса", () -> {
-//            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-//            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
-//        });
-//        step("Проверка результатов поиска", () ->
-//                $$(AppiumBy.id("org.wikipedia.alpha:id/search_container"))
-//                        .shouldHave(sizeGreaterThan(0)));
-//    }
+    @Test
+    @Tag("android")
+    void successfulSearchTest() {
+        step("Ввод поискового запроса", () -> {
+            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
+        });
+        step("Проверка результатов поиска", () ->
+                $$(AppiumBy.id("org.wikipedia.alpha:id/search_container"))
+                        .shouldHave(sizeGreaterThan(0)));
+    }
 
     @Test
     @Tag("android")
