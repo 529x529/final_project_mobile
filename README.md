@@ -6,8 +6,6 @@
 <img src="../final_project_mobile/images/logos/Java.svg" width="50" height="50"  alt="Java"/>
 <img src="../final_project_mobile/images/logos/Github.svg" width="50" height="50"  alt="Github"/>
 <img src="../final_project_mobile/images/logos/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/>
-<img src="../final_project_mobile/images/logos/Appium.svg" width="50" height="50"  alt="Jenkins"/>
-<img src="../final_project_mobile/images/logos/Browserstack.svg" width="50" height="50"  alt="Jenkins"/>
 <img src="../final_project_mobile/images/logos/Gradle.svg" width="50" height="50"  alt="Gradle"/>
 <img src="../final_project_mobile/images/logos/Allure_Report.svg" width="50" height="50"  alt="Allure_Report"/>
 <img src="../final_project_mobile/images/logos/Rest-Assured.svg" width="50" height="50"  alt="Jenkins"/>
