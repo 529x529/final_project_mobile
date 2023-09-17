@@ -44,15 +44,16 @@ public class SearchTests extends TestBase {
 
     @Test
     void addLanguageTest() {
-        step("Сlick on the search bar", () -> {
+        step("переход в action menu приложения", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/menu_overflow_button")).click();
         });
         step("Выбор языка", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/explore_overflow_settings")).click();
-            $$(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).findBy(text("Svenska")).click();
+            $$(AppiumBy.className("android.widget.TextView")).findBy(text("Wikipedia language")).click();
+            $$(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).findBy(text("Deutsch")).click();
         });
         step("Проверка, что выбранный язык добавлен", () -> {
-            $$(AppiumBy.className("android.widget.TextView")).findBy(text("Svenska")).shouldBe(visible);
+            $$(AppiumBy.className("android.widget.TextView")).findBy(text("Deutsch")).shouldBe(visible);
         });
     }
 }
