@@ -19,6 +19,7 @@ public class TestBase {
         Configuration.browserSize = null;
         Configuration.timeout = 3000;
     }
+
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
