@@ -36,7 +36,7 @@ gradle ${PLATFORM}_test
 <img title="Jenkins Build" src="images/screens/Jenkins.png">
 </p>
 
-### Отчет в Allure report
+### Отчет в [Allure report](https://jenkins.autotests.cloud/job/final_project_mobile/11/allure/)
 #### Основная страница отчета
 <p align="center">
 <img title="Jenkins Build" src="images/screens/Allure-report.png">
