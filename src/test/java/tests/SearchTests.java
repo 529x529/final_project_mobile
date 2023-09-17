@@ -44,7 +44,7 @@ public class SearchTests extends TestBase {
 
     @Test
     void addLanguageTest() {
-        step("переход в action menu приложения", () -> {
+        step("Переход в action menu приложения", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/menu_overflow_button")).click();
         });
         step("Выбор языка", () -> {
