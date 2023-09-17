@@ -7,15 +7,14 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
+@Tag("android")
+@Tag("local")
 public class SearchTests extends TestBase {
 
-
     @Test
-    @Tag("android")
     void successfulSearchTest() {
         step("Ввод поискового запроса", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
@@ -27,7 +26,6 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @Tag("android")
     void checkErrorTest() {
         step("Ввод поискового запроса", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
@@ -39,8 +37,24 @@ public class SearchTests extends TestBase {
         });
 
         step("Проверка страницы", () -> {
-        $(AppiumBy.id("org.wikipedia.alpha:id/view_wiki_error_button")).shouldBe(visible);
-        $(AppiumBy.id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldHave(text("An error occurred"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/view_wiki_error_button")).shouldBe(visible);
+            $(AppiumBy.id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldHave(text("An error occurred"));
+        });
+    }
+
+    @Test
+    void addLanguageTest() {
+        back();
+        step("Сlick on the search bar", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
+        });
+        step("Выбор языка", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_lang_button")).click();
+            $(AppiumBy.className("android.widget.ImageView")).click();
+            $$(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).findBy(text("Français")).click();
+        });
+        step("Проверка, что выбранный язык добавлен", () -> {
+            $$(AppiumBy.className("android.widget.TextView")).findBy(text("Français")).shouldBe(visible);
         });
     }
 }

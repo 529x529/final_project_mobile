@@ -62,7 +62,13 @@ compileTestJava {
 }
 
 task android_test(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags("android")
+    }
+}
+
+task local_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("local")
     }
 }
