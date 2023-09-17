@@ -31,7 +31,7 @@ gradle ${PLATFORM}_test
 
 - <code>PLATFORM</code> – платформа на которой будут выполняться тесты;
 
-### Сборка в Jenkins
+### Сборка в [Jenkins](https://jenkins.autotests.cloud/job/final_project_mobile/)
 <p align="center">
 <img title="Jenkins Build" src="images/screens/Jenkins.png">
 </p>
