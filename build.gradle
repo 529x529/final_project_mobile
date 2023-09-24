@@ -61,9 +61,21 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-task android_test(type: Test) {
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task remote_test(type: Test) {
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("remote")
     }
 }
 

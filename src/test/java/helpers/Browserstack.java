@@ -1,5 +1,6 @@
 package helpers;
 
+import config.BrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
