@@ -17,9 +17,10 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        switch (ENV) {
-            case "remote" -> Configuration.browser = BrowserstackDriver.class.getName();
-            case "local" -> Configuration.browser = LocalDriver.class.getName();
+        if (ENV.equals("remote")) {
+            Configuration.browser = BrowserstackDriver.class.getName();
+        } else {
+            Configuration.browser = LocalDriver.class.getName();
         }
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
