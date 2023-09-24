@@ -18,7 +18,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         switch (ENV) {
-            case "remote" -> Configuration.browser = BrowserstackDriver.class.getName();
+            case "browserstack" -> Configuration.browser = BrowserstackDriver.class.getName();
             case "local" -> Configuration.browser = LocalDriver.class.getName();
         }
         Configuration.browserSize = null;
