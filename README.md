@@ -19,19 +19,21 @@
 * Проверка прохождения начальных экранов
 * Проверка поиска в приложении
 * Изменение языка в приложении
-* Проверка поискового запроса
-  
+* Проверка открытия страницы авторизации
 
-### Запуск тестов из терминала
+
+### Запуск автотестов:
+
+#### Локальный запуск тестов из терминала:
+```bash
+gradle clean local_test -Denv=local
+```
+
 #### Удаленный запуск тестов в Browserstack:
 
 ```bash
-gradle ${PLATFORM}_test 
--Denv=${PLATFORM}
+gradle clean remote_test -Denv=remote
 ```
-где:
-
-- <code>PLATFORM</code> – платформа на которой будут выполняться тесты;
 
 ### Сборка в [Jenkins](https://jenkins.autotests.cloud/job/final_project_mobile/)
 <p align="center">
