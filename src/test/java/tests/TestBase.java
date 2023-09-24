@@ -13,12 +13,12 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
-    public static String ENV = System.getProperty("env");
+    public static String ENV = System.getProperty("env", "remote");
 
     @BeforeAll
     static void beforeAll() {
         switch (ENV) {
-            case "browserstack" -> Configuration.browser = BrowserstackDriver.class.getName();
+            case "remote" -> Configuration.browser = BrowserstackDriver.class.getName();
             case "local" -> Configuration.browser = LocalDriver.class.getName();
         }
         Configuration.browserSize = null;
